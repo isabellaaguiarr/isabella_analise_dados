@@ -30,5 +30,5 @@ res_df = pd.DataFrame({
     'Bilheteria_media': list(res.rx2('Bilheteria'))
 })
 
-print("Média da Bilheteria por Gênero (formatada):")
+print("Média da Bilheteria por Gênero:")
 print(res_df)
