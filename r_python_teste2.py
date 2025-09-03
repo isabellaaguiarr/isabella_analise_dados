@@ -2,8 +2,7 @@ import pandas as pd
 import rpy2.robjects as ro
 from rpy2.robjects import DataFrame, StrVector, FloatVector
 
-
-# Ler arquivo Excel no Python
+# Ler arquivo 
 arquivo = "C:/Users/isabe/Documents/PROJETOS/analise_python_r/data/filmes.xlsx"
 df = pd.read_excel(arquivo)
 
