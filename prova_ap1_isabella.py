@@ -22,7 +22,7 @@ arquivo1 = "C:/Users/isabe/Documents/PROJETOS/analise_python_r/dados/ncr_ride_bo
 df1 = pd.read_csv(arquivo1)
 
 arquivo2 = "C:\\Users\\isabe\\Documents\\PROJETOS\\analise_python_r\\dados\\ncr_ride_regioes.xlsx"
-df2 = pd.read_excel(arquivo2)
+df2 = pd.read_excel(arquivo2)-
 
 # 1 - Quantas corridas estão com Status da Corrida como Completada ("Completed") no dataset? 
 filtrando = (df1["Booking Status"] == "Completed")
@@ -97,7 +97,7 @@ plt.show()
 token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU4OTcxNDc4LCJpYXQiOjE3NTYzNzk0NzgsImp0aSI6ImExOTA3MTk5ZTU2NDQ3OGVhNmI0NGJhNDViYzBlYzViIiwidXNlcl9pZCI6IjQ5In0.pZtn2sQhc-GKGZtjWeL6kcZy9RwrJQfKIMZkBak3MTc"
 headers = {'Authorization': 'Bearer {}'.format(token)}
 params = {
-'ticker': 'ibov',
+'ticker': 'btc',
 'data_ini': '2001-01-01',
 'data_fim': '2025-09-01'
 }
