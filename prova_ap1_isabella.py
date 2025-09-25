@@ -22,7 +22,7 @@ arquivo1 = "C:/Users/isabe/Documents/PROJETOS/analise_python_r/dados/ncr_ride_bo
 df1 = pd.read_csv(arquivo1)
 
 arquivo2 = "C:\\Users\\isabe\\Documents\\PROJETOS\\analise_python_r\\dados\\ncr_ride_regioes.xlsx"
-df2 = pd.read_excel(arquivo2)-
+df2 = pd.read_excel(arquivo2)
 
 # 1 - Quantas corridas estão com Status da Corrida como Completada ("Completed") no dataset? 
 filtrando = (df1["Booking Status"] == "Completed")
@@ -39,7 +39,9 @@ media_veiculo.max()
 mediana = df1.groupby('Vehicle Type')['Ride Distance'].median()
 
 # 4 - Qual o Metodo de Pagamento mais utilizado pelas bicicletas ("Bike") ?
-df1 = df1['Payment Method'].unique()
+bike = df1['Vehicle Type'].str.strip().str.lower() == 'bike'
+payment_bike = df1.loc[bike, 'Payment Method'].value_counts(dropna=True)
+mais_usado = payment_bike.idxmax()
 
 # 5 - Faca um merge com ncr_ride_regions.xlsx pela coluna ("Pickup Location") para pegar as regioes das corrifas.
 # e verifique qual a Regiao com o maior Valor da corrida?
@@ -65,10 +67,10 @@ response = requests.get(url_meta)
 data_meta = response.json()["value"]
 df_meta = pd.DataFrame(data_meta)
 
-df_anfavea = df_meta[df_meta["FNTSIGLA"].str.contains("anfavea.*", regex=True, case=False)]
+df_anfavea = df_meta[df_meta["FNTSIGLA"].str.contains("Fipe.*", regex=True, case=False)]
 df_imoveis = df_anfavea[df_anfavea["SERNOME"].str.contains("imoveis", regex=True, case=False)]
 
-SERCODIGO = " "  
+SERCODIGO = "FIPE12_VENBR12"  
 url_valores = f"http://ipeadata.gov.br/api/odata4/ValoresSerie(SERCODIGO='{SERCODIGO}')"
 response = requests.get(url_valores)
 data_valores = response.json()["value"]
