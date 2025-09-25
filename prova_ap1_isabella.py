@@ -123,7 +123,6 @@ plt.grid(True)
 plt.show()
 
 
-
 # 9 - Você tem acesso à API do Laboratório de Finanças, que fornece dados do Planilhão em formato JSON. 
 # A autenticação é feita via JWT Token no cabeçalho da requisição.
 # Acesse a API no endpoint: https://laboratoriodefinancas.com/api/v1/planilhao
