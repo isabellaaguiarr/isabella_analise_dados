@@ -28,6 +28,10 @@ df2 = pd.read_excel(arquivo2)
 filtrando = (df1["Booking Status"] == "Completed")
 filtrando.shape
 
+# 2 - Qual a proporção em relação ao total de corridas?
+total_corridas = len(df1)
+proporcao = filtrando / total_corridas
+
 # 3 - Calcule a média e mediana da Distância percorrida por cada Tipo de veículo.
 # media
 media = df1['Ride Distance'].mean()
