@@ -73,7 +73,7 @@ data_meta = response.json()["value"]
 df_meta = pd.DataFrame(data_meta)
 
 df_anfavea = df_meta[df_meta["FNTSIGLA"].str.contains("Fipe.*", regex=True, case=False)]
-df_imoveis = df_anfavea[df_anfavea["SERNOME"].str.contains("imoveis", regex=True, case=False)]
+df_imoveis = df_anfavea[df_anfavea["SERNOME"].str.contains("venda", regex=True, case=False)]
 
 SERCODIGO = "FIPE12_VENBR12"  
 url_valores = f"http://ipeadata.gov.br/api/odata4/ValoresSerie(SERCODIGO='{SERCODIGO}')"
