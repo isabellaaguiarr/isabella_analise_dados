@@ -150,8 +150,8 @@ dados = response["dados"]
 df = pd.DataFrame.from_dict(dados)
 
 filtrando = (df["setor"] == "tecnologia") 
-colunas = ["ticker", "setor", "roe"] 
-maior = df.loc[filtrando, colunas].nlargest(1, 'roe')  
+colunas = ["ticker", "setor", "roc"] 
+maior = df.loc[filtrando, colunas].nlargest(1, 'roc')  
 print(maior) 
  
 # 10 - A API do Laboratório de Finanças fornece informações de balanços patrimoniais de empresas listadas na B3.
