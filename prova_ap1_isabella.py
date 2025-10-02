@@ -27,11 +27,11 @@ df2 = pd.read_excel(arquivo2)
 # 1 - Quantas corridas estão com Status da Corrida como Completada ("Completed") no dataset? 
 filtrando = (df1["Booking Status"] == "Completed")
 filtrando.shape
-filtro = df1["Booking Status"] == "Completed".sum()
+# filtro = df1["Booking Status"] == "Completed".sum()
 
 # 2 - Qual a proporção em relação ao total de corridas?
 total_corridas = len(df1)
-proporcao = filtro / total_corridas
+proporcao = filtrando / total_corridas
 
 # 3 - Calcule a média e mediana da Distância percorrida por cada Tipo de veículo.
 # media
