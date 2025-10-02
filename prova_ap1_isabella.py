@@ -26,7 +26,7 @@ df2 = pd.read_excel(arquivo2)
 
 # 1 - Quantas corridas estão com Status da Corrida como Completada ("Completed") no dataset? 
 filtrando = (df1["Booking Status"] == "Completed")
-filtrando.shape
+filtrando.sum
 # filtro = df1["Booking Status"] == "Completed"
 # filtro.sum()
 
